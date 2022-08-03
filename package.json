@@ -1,0 +1,28 @@
+{
+  "name": "sample-ts-jj",
+  "version": "1.3.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist/**/*"],
+  "scripts": {
+    "format": "prettier --write src/**/*.ts src/**/*.js",
+    "lint": "tslint -p tsconfig.json",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "test": "echo no-test"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.7.4"
+  },
+  "keywords": ["sample", "typescript"],
+  "author": "jjordan-quantum"
+}

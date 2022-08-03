@@ -1,0 +1,1 @@
+export {IGreeter} from './IGreeter';
